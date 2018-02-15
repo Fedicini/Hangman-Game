@@ -15,11 +15,11 @@ var wordGenerator = function(){
     word = wordBank[index];
    placeholder = "";
     for (let i = 0; i < word.length; i++) {
-        console.log("_ "); 
+        //console.log("_ "); 
         placeholder = placeholder + "_";
     };
     puzzle.textContent = placeholder;
-    console.log(word);
+    //console.log(word);
     wordInPlay = word;
 };
 reset();
@@ -47,7 +47,7 @@ document.onkeyup = function(event){
      for (let j = 0; j < wordInPlay.length; j++) {
         if (event.key === wordInPlay.charAt(j)) {
            placeholder = placeholder.substring(0,j) + event.key + placeholder.substring(j+1);
-           console.log(placeholder);
+           //console.log(placeholder);
            puzzle.textContent = placeholder;
         }
         
@@ -72,7 +72,7 @@ document.onkeyup = function(event){
         guessesLeft--;
         document.querySelector("#guess-countdown").innerHTML = "Guesses Left: " + guessesLeft;
         usedLetters.push(event.key);
-        console.log(usedLetters)
+        //console.log(usedLetters)
         document.querySelector("#guess-list").innerHTML = "";
         for(var m = 0; m<usedLetters.length; m++){
             document.querySelector("#guess-list").innerHTML = document.querySelector("#guess-list").innerHTML + " " + usedLetters[m];
